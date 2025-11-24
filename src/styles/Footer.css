@@ -1,0 +1,69 @@
+/* Dark footer with white text */
+.footer {
+  background-color: #20272c;          /* Dark background color for the footer */
+  color: #fff;                         /* Default text color: white */
+  padding: 40px 20px 20px 20px;        /* Inner spacing: top 40px, sides 20px, bottom 20px */
+  display: flex;                       /* Enables flexible horizontal layout */
+  flex-wrap: wrap;                     /* Allows columns to wrap onto new lines on small screens */
+  justify-content: space-between;      /* Spreads columns apart horizontally */
+  gap: 30px;                           /* Space between footer sections */
+  font-family: Arial, sans-serif;      /* Sets the font for the entire footer */
+}
+
+/* Footer brand */
+.footer-top .footer-brand {
+  font-size: 1.8rem;                   /* Large brand title */
+  font-weight: 700;                    /* Bold brand text */
+  margin-bottom: 20px;                 /* Space below the brand name */
+  color: #ffcc00;                      /* Yellow highlight color */
+}
+
+/* Columns */
+.footer-column {
+  display: flex;                       /* Makes each column a flexbox */
+  flex-direction: column;              /* Stacks items top-to-bottom */
+  min-width: 140px;                    /* Ensures columns don’t shrink too small */
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;                   /* Heading size */
+  margin-bottom: 10px;                 /* Space below the heading */
+  color: #ffcc00;                      /* Yellow section title */
+}
+
+/* Links */
+.footer-column a {
+  color: #fff;                         /* Default link color: white */
+  text-decoration: none;               /* Removes underline */
+  margin-bottom: 6px;                  /* Space between links */
+  transition: color 0.2s;              /* Smooth color change on hover */
+}
+
+.footer-column a:hover {
+  color: #ffcc00;                      /* Yellow link on hover */
+}
+
+/* Footer bottom */
+.footer-bottom {
+  width: 100%;                         /* Stretches across full footer width */
+  margin-top: 30px;                    /* Separation from top content */
+  border-top: 1px solid rgba(255,255,255,0.2); /* Light divider line */
+  padding-top: 15px;                   /* Space above bottom text */
+  text-align: center;                  /* Centered copyright text */
+  font-size: 0.85rem;                  /* Smaller footer text */
+  color: rgba(255,255,255,0.7);        /* Slightly faded white */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;            /* Stacks all columns vertically on small screens */
+    align-items: center;               /* Centers columns horizontally */
+    text-align: center;                /* Centers text for mobile layout */
+  }
+  .footer-column {
+    align-items: center;               /* Centers items inside each column */
+  }
+}
+
+

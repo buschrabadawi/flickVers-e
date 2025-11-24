@@ -1,0 +1,99 @@
+/* Full-page wrapper with background image */
+.login-container-wrapper {
+  min-height: 100vh;                                   /* Fills full height */
+  display: flex;                                       
+  justify-content: center;                              /* Center horizontally */
+  align-items: center;                                  /* Center vertically */
+  background: url('../assets/AVATARfireandash3.jpg') 
+              center/cover no-repeat;                  /* Background image covers */
+  position: relative;                                  
+  animation: fadeIn 0.8s ease;                         
+  padding: 20px;        /* spacing on small screens */
+  box-sizing: border-box;
+}
+
+/* Login card */
+.login-container {
+  position: relative;                                   
+  background: #ffffff;                                   /* White card */
+  padding: 40px;                                         
+  border-radius: 12px;                                   
+  width: 350px;                                          
+  max-width: 100%;          /* never exceeds screen width */
+  text-align: center;                                    
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);              
+  z-index: 1;                                            
+  animation: slideUp 0.6s ease;                          
+}
+
+/* Title */
+.login-container h2 {
+  margin-bottom: 25px;                                  
+  color: #111;                                          
+}
+
+/* Inputs */
+.login-container input {
+  width: 100%;                                          
+  padding: 12px;                                        
+  margin-bottom: 15px;                                  
+  border-radius: 6px;                                   
+  border: 1px solid #ccc;                               
+  font-size: 16px;                                      
+  box-sizing: border-box;                               
+  transition: border-color 0.3s;                        
+}
+
+.login-container input:focus {
+  border-color: #ffcc00;                                
+  outline: none;                                        
+}
+
+/* Yellow button */
+.login-container button {
+  width: 100%;                                          
+  padding: 12px;                                        
+  border: none;                                         
+  border-radius: 6px;                                   
+  background-color: #ffcc00;                            
+  color: #111;                                          
+  font-weight: 700;                                     
+  cursor: pointer;                                      
+  font-size: 16px;                                      
+  transition: 0.3s;                                     
+}
+
+.login-container button:hover {
+  background-color: #e6b800;                            
+  transform: translateY(-2px);                          
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }                                  
+  to { opacity: 1; }                                    
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }     
+  to { transform: translateY(0); opacity: 1; }          
+}
+
+/* Responsive adjustments */
+@media (max-width: 780px) {
+  .login-container {
+    padding: 35px;          /* slightly reduce padding */
+  }
+}
+
+@media (max-width: 420px) {
+  .login-container {
+    width: 100%;             /* full width on tiny screens */
+    padding: 25px;           /* reduce padding */
+  }
+}
+
+
+
+
+

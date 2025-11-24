@@ -1,0 +1,37 @@
+.contact-page {
+  min-height: 60vh;              /* Page section must be at least 60% of screen height */
+  display: flex;                 /* Enables flexbox layout */
+  flex-direction: column;        /* Stacks items vertically */
+  justify-content: center;       /* Centers items vertically inside the section */
+  align-items: center;           /* Centers items horizontally */
+  text-align: center;            /* Centers text inside this section */
+  padding: 40px 20px;            /* Adds inner spacing: 40px top/bottom, 20px sides */
+  background-color: #fff9e6;     /* Light soft yellow background color */
+}
+
+.contact-page h2 {
+  font-size: 2rem;               /* Large title text size */
+  margin-bottom: 20px;           /* Space below the heading */
+  color: #111;                   /* Dark text color */
+}
+
+.contact-page p {
+  font-size: 1.1rem;             /* Paragraph text size slightly larger than default */
+  margin-bottom: 10px;           /* Space under each paragraph */
+  color: #111;                   /* Same dark text color */
+}
+
+.contact-email {
+  font-size: 1.1rem;             /* Email link text size */
+  color: #ffcc00;                /* Bright yellow color for the link */
+  font-weight: 700;              /* Bold link text */
+  text-decoration: none;         /* Removes underline from the link */
+  transition: color 0.2s;        /* Smooth color change effect on hover */
+}
+
+.contact-email:hover {
+  color: #e6b800;                /* Darker yellow on hover */
+  text-decoration: underline;    /* Adds underline on hover */
+}
+
+

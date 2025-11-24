@@ -1,0 +1,311 @@
+/* ===============================
+   GLOBAL LAYOUT (footer bottom)
+================================= */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* ===============================
+   PAGE CONTAINERS
+================================= */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   GRID (Movies/Shows)
+================================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+  margin-top: 12px;
+}
+
+@media (max-width: 780px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+}
+
+/* ===============================
+   FILTER BUTTONS
+================================= */
+.filter-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.filter-pill {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.filter-pill:hover {
+  transform: translateY(-1px);
+  background: #e9e9e9;
+}
+
+.filter-pill.active {
+  background: #ffcc00;
+  color: #111;
+  border-color: #e6b800;
+}
+
+/* ===============================
+   SEARCH INPUT
+================================= */
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 16px;
+}
+
+/* ===============================
+   HOME PAGE CONTENT
+================================= */
+
+/* Main container */
+.home-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* HERO: welcome box */
+.home-hero {
+  text-align: center;
+  padding: 28px 14px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,204,0,0.09), rgba(0,0,0,0.02));
+}
+
+.home-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.home-text {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Explore button */
+.home-btn {
+  display: inline-block;
+  background: #ffcc00;
+  color: #111;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.home-btn:hover {
+  background: #e6b800;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+FEATURED SECTION (Home)
+================================= */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px; /* small space between cards */
+}
+
+.featured-card,
+.home-card {
+  position: relative; /* required for overlay */
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover,
+.home-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.10);
+}
+
+/* ==============================================
+   WHITE FADE OVERLAY — ADDED ONLY THIS BLOCK
+================================================ */
+.featured-card::after,
+.home-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);   /* transparent */
+  transition: background 0.35s ease;    /* smooth fade */
+  pointer-events: none;                 /* don't block clicks */
+}
+
+.featured-card:hover::after,
+.home-card:hover::after {
+  background: rgba(255, 255, 255, 0.20); /* soft white fade */
+}
+/* ============================================== */
+
+.featured-image,
+.home-card img {
+  width: 100%;
+  height: 500px; /* taller cinematic height */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.featured-card:hover .featured-image,
+.home-card:hover img {
+  transform: scale(1.05);
+}
+
+.featured-info,
+.home-card div {
+  padding: 10px;
+  text-align: left;
+}
+
+.featured-info h4,
+.home-card h4 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.featured-info p,
+.home-card p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 780px) {
+  .featured-image,
+  .home-card img {
+    height: 400px; /* slightly smaller for tablets */
+  }
+}
+
+@media (max-width: 420px) {
+  .featured-image,
+  .home-card img {
+    height: 280px; /* mobile-friendly height */
+  }
+}
+
+/* ===============================
+ABOUT PAGE
+================================= */
+
+.app-container {
+  padding: 40px 20px;
+  background: linear-gradient(180deg, rgba(255,204,0,0.05), rgba(0,0,0,0.02));
+  border-radius: 12px;
+  animation: fadeIn 1s ease;
+}
+
+.app-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 40px auto 20px; /* auto for horizontal centering */
+  text-align: center;
+  color: #111;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+  animation: fadeIn 1s ease;
+}
+
+.app-container h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background-color: #ffcc00;
+  border-radius: 2px;
+}
+
+.app-container p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  animation: fadeIn 1s ease;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* About page mini images */
+.about-images {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5); /* yellow shadow */
+}
+
+.about-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 28px rgba(255, 204, 0, 0.7); /* stronger shadow on hover */
+}
+/* Ensure page content is not hidden under fixed navbar */
+.app-container {
+  padding-top: 80px; /* 60px navbar + 20px spacing */
+}
+
+
